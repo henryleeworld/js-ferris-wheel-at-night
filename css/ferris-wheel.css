@@ -1,0 +1,24 @@
+.bg-darker {
+    background-color: #252B33;
+    background-image: radial-gradient(50% -1%, #3A4451 11%, #252B33 100%);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.no-opacity {
+    opacity: 0;
+}
+
+.scale-0 {
+    transform: scale(0);
+}
+
+.border {
+    border: 1px solid grey;
+}
+
+.main {
+    min-height: 500px;
+}

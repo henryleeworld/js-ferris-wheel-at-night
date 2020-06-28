@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="夜晚摩天輪" />
+        <meta property="og:description" content="搭乘摩天輪 360 度放眼所及，優美的自然美景一覽無遺，當摩天輪上升至最高點，看出去的景色更是一級棒。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="css/ferris-wheel.css" />
+        <title>夜晚摩天輪</title>
+    </head>
+    <body>
+        <div class="container mt-4 bg-darker">
+            <svg class="border bg-darker" id="svg" viewBox="0 0 1000 700" version="1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <linearGradient id="line-gradient" x1="0" y1="0" x2="0" y2="-250" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#B9B075" offset="0%" />
+                        <stop stop-color="#F44336" offset="25%" />
+                        <stop stop-color="#9C27B0" offset="50%" />
+                        <stop stop-color="#4CAF50" offset="75%" />
+                        <stop stop-color="#2196F3" offset="100%" />
+                    </linearGradient>
+                </defs>
+
+                <defs>
+                    <path id="window" d="M11 11H26V26H11z" />
+                    <filter x="-110%" y="-110%" width="320%" height="320%" filterUnits="objectBoundingBox" id="filter-2">
+                        <feMorphology radius="2" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1" />
+                        <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.988235294   0 0 0 0 0.933333333   0 0 0 0 0.568627451  0 0 0 0.483214447 0" in="shadowBlurOuter1" />
+                    </filter>
+                </defs>
+
+                <g id="moon" transform="translate(700, 50) scale(0.7)">
+                    <defs>
+                        <circle stroke="none" id="moon-circle" cx="132" cy="132" r="132" />
+                    </defs>
+                    <mask id="moon-mask" fill="#fff">
+                        <use xlink:href="#moon-circle" />
+                    </mask>
+                    <use id="Mask" stroke="none" fill="#F9F9FA" xlink:href="#moon-circle" />
+                    <ellipse id="moon-bg" fill="#2C3540" mask="url(#moon-mask)" cx="104" cy="115" rx="132" ry="135" />
+                </g>
+
+                <g transform="translate(550, 100)">
+                    <path
+                        class="building"
+                        id="building-long"
+                        fill="#4D617B"
+                        fill-rule="evenodd"
+                        d="M83.9359452 47.2418612L93.1161245 47.2418612 93.1161245 34.9967116 64.0094672 34.9967116 64.0094672 12.2451496 67.6251385 12.2451496 67.6251385 0 34.4646994 0 34.4646994 12.2451496 37.4760802 12.2451496 37.4760802 34.9967116 8.97371336 34.9967116 8.97371336 47.2418612 16.6230235 47.2418612 16.6230235 71.7074975 0 71.7074975 0 600 100 600 100 71.7074975 83.9359452 71.7074975 83.9359452 47.2418612"
+                    />
+                </g>
+
+                <g transform="scale(0.6) translate(600 400)">
+                    <g transform="translate(500 280)">
+                        <line class="wheel-line no-opacity" x1="0" y1="0" x2="0" y2="-250" stroke="url(#line-gradient)" stroke-width="2" />
+
+                        <circle class="wheel-circle" stroke="#5DE2F9" fill="none" cx="0" cy="0" r="100"></circle>
+                        <circle class="wheel-circle" stroke="#5DE2F9" fill="none" cx="0" cy="0" r="175"></circle>
+                        <circle class="wheel-circle" stroke="#5DE2F9" fill="none" cx="0" cy="0" r="240"></circle>
+                        <circle class="wheel-circle" stroke="#537AAC" fill="none" cx="0" cy="0" r="250" stroke-width="4"></circle>
+                    </g>
+
+                    <g transform="translate(395, 280)">
+                        <path class="wheel-base" stroke="#5DE2F9" stroke-width="2" d="M155 162L105 112 55 162 205 302 105 2 5 302 155 162 105 2 105 302" fill="none" fill-rule="evenodd" stroke-linejoin="bevel" />
+                    </g>
+
+                    <g transform="translate(480, 30)">
+                        <path
+                            class="wheel-cart no-opacity"
+                            fill="#B9B075"
+                            d="M20,0 C31.045695,0 40,8.954305 40,20 L40,30 C40,41.045695 31.045695,50 20,50 C8.954305,50 0,41.045695 0,30 L0,20 C0,8.954305 8.954305,0 20,0 Z M37,27 L37,20 C37,10.6111593 29.3888407,3 20,3 C10.6111593,3 3,10.6111593 3,20 L3,27 L37,27 Z"
+                            fill="none"
+                            fill-rule="evenodd"
+                        />
+                    </g>
+                </g>
+
+                <g transform="translate(900, 300)  scale(-1,1)">
+                    <path
+                        class="building"
+                        id="building-wide"
+                        fill="#31455F"
+                        fill-rule="evenodd"
+                        fill="#31455F"
+                        d="M632.058757 0L505.469049 52.3460874 505.469049 262.095303 490.46078 262.095303 490.46078 143.718226 475.979117 143.718226 475.979117 134.061443 484.255002 134.061443 484.255002 129.235484 458.01096 129.235484 458.01096 120.25492 461.275009 120.25492 461.275009 115.428961 431.376504 115.428961 431.376504 120.25492 434.095788 120.25492 434.095788 129.235484 408.396511 129.235484 408.396511 134.061443 415.292325 134.061443 415.292325 143.718226 400.311294 143.718226 400.311294 283.33536 336.900678 283.33536 336.900678 252.852035 308.332306 252.852035 308.332306 244.143903 324.65709 244.143903 324.65709 239.794702 215.931126 239.789837 215.931126 135.316582 218.432504 135.316582 218.432504 129.274403 145.143487 129.274403 145.143487 135.316582 148.911443 135.316582 148.911443 274.35966 78.3008528 274.35966 78.3008528 277.803994 86.6130549 277.803994 86.6130549 284.697526 70.787639 284.697526 70.787639 75.0504731 73.2935569 75.0504731 73.2935569 69.0034297 0 69.0034297 0 75.0504731 3.76795616 75.0504731 3.76795616 400 695.641882 400 695.641882 266.322882 700 266.322882 700 262.095303 632.058757 262.095303 632.058757 0"
+                    />
+                </g>
+                <g transform="translate(800, 200)">
+                    <path
+                        class="building"
+                        id="building-other"
+                        fill-rule="evenodd"
+                        fill="#39557A"
+                        d="M188.195241 20.4207855L194.941346 20.4207855 194.941346 15.1316421 173.552159 15.1316421 173.552159 5.28914339 176.209155 5.28914339 176.209155 0 151.841024 0 151.841024 5.28914339 154.053954 5.28914339 154.053954 15.1316421 133.108833 15.1316421 133.105133 20.4207855 138.729971 20.4207855 138.729971 31.0044041 126.514451 31.0044041 126.514451 217.617326 100.514377 217.617326 100.514377 70.0118366 104.066906 70.0118366 104.066906 63.9015963 0 63.9015963 0 70.0118366 5.34729675 70.0118366 5.34729675 500 200 500 200 31.0044041 188.195241 31.0044041 188.195241 20.4207855"
+                    />
+                </g>
+
+                <g class="window no-opacity" transform="translate(555, 200)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(555, 215)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(605, 200)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(290, 370)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(340, 450)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(340, 465)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(420, 450)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(450, 490)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(690, 450)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(820, 300)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(820, 400)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(855, 350)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+                <g class="window no-opacity" transform="translate(945, 225)">
+                    <use fill="#000" filter="url(#filter-2)" xlink:href="#window" />
+                    <use fill="#D0BF52" xlink:href="#window" />
+                </g>
+            </svg>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js" defer></script>
+        <script src="js/ferris-wheel.js" defer></script>
+    </body>
+</html>
