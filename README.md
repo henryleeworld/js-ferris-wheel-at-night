@@ -11,5 +11,5 @@ $ git clone
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/Eap6ST7.gif)
+![](https://i.imgur.com/sEZATo9.gif)
 > 在高空中把自然美景盡收眼底
